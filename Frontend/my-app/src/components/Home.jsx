@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Card } from 'react-bootstrap';
 
-function Home() {
+function Home()  {
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -26,5 +26,6 @@ function Home() {
     </>
   );
 }
+
 
 export default Home;
