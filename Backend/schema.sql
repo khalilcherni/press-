@@ -28,7 +28,23 @@ CREATE TABLE IF NOT EXISTS `press`.`home` (
   `date` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB
-AUTO_INCREMENT = 2
+AUTO_INCREMENT = 4
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+
+-- -----------------------------------------------------
+-- Table `press`.`politics`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `press`.`politics` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `title` VARCHAR(1000) NOT NULL,
+  `image` VARCHAR(10000) NOT NULL,
+  `description` VARCHAR(1000) NOT NULL,
+  `date` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB
+AUTO_INCREMENT = 3
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
 
@@ -43,7 +59,23 @@ CREATE TABLE IF NOT EXISTS `press`.`sports` (
   `description` VARCHAR(1000) NOT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB
-AUTO_INCREMENT = 4
+AUTO_INCREMENT = 5
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+
+-- -----------------------------------------------------
+-- Table `press`.`tech`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `press`.`tech` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `title` VARCHAR(100) NOT NULL,
+  `image` VARCHAR(10000) NOT NULL,
+  `description` VARCHAR(1000) NOT NULL,
+  `date` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB
+AUTO_INCREMENT = 6
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
 
