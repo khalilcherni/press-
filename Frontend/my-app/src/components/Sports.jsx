@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import { Card,Button } from 'react-bootstrap/Card';
+import { Card,Button } from 'react-bootstrap';
 function Sports() {
 const [data,setData]=useState([])
 

@@ -13,26 +13,21 @@ function Home() {
   }, []);
 
   return (
-    <div>
+    <div className="d-flex flex-wrap">
       {data.map(e => (
-        <div key={e.id}>
-          <h3>{e.title}</h3>
-          <img src={e.image} alt={e.title} />
-          <p>{e.description}</p>
-          <p>{e.date}</p>
-
-          <Card style={{ width: '18rem' }}>
+        <div key={e.id} style={{ margin: '10px' }}>
+          <Card style={{ width: '18rem', height: '100%' }}>
             <Card.Img variant="top" src={e.image} />
-            <Card.Body>
+            <Card.Body className="d-flex flex-column">
               <Card.Title>{e.title}</Card.Title>
               <Card.Text>
-                {e.description}
+                {/* <h6>{e.description}</h6> */}
               </Card.Text>
             </Card.Body>
             <ListGroup className="list-group-flush">
               <ListGroup.Item>Cras justo odio</ListGroup.Item>
               <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
-              <ListGroup.Item>{e.date}</ListGroup.Item>
+              <ListGroup.Item>  <h6>{e.date}</h6> </ListGroup.Item>
             </ListGroup>
             <Card.Body>
               <Card.Link href="#">Card Link</Card.Link>
