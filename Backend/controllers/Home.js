@@ -25,4 +25,15 @@ else{
                 res.status(201).json(results)
             
         })
-    },}
+    },
+    fassakh:(req, res) => {
+        var id= req.params.id
+      
+        home.deleteproduct( id, function (err, results) {
+          if (err) {
+            res.status(500).send(err)
+          } else {
+            res.json(results)
+          }
+        });
+        },}

@@ -16,5 +16,11 @@ module.exports={
           callback(error, results);
         })
   
-        }
+        },
+        deleteproduct:(id,callback)=>{
+          const sql='DELETE FROM home WHERE `id`=?';
+          connection.query(sql,[id],function(err,results){
+              callback(err,results)
+          })
     }
+  }
