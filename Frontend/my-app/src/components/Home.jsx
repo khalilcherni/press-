@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import Card from 'react-bootstrap/Card';
-import ListGroup from 'react-bootstrap/ListGroup';
 import axios from 'axios';
+import { Card } from 'react-bootstrap';
+import "../index.css";
 
 function Home() {
   const [data, setData] = useState([]);
@@ -13,28 +13,23 @@ function Home() {
   }, []);
 
   return (
-    <div className="d-flex flex-wrap">
+    <div className="d-flex flex-column align-items-center">
       {data.map(e => (
-        <div key={e.id} style={{ margin: '10px' }}>
-          <Card style={{ width: '18rem', height: '100%' }}>
-            <Card.Img variant="top" src={e.image} />
-            <Card.Body className="d-flex flex-column">
-              <Card.Title>{e.title}</Card.Title>
-              <Card.Text>
-                {/* <h6>{e.description}</h6> */}
-              </Card.Text>
-            </Card.Body>
-            <ListGroup className="list-group-flush">
-              <ListGroup.Item>Cras justo odio</ListGroup.Item>
-              <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
-              <ListGroup.Item>  <h6>{e.date}</h6> </ListGroup.Item>
-            </ListGroup>
-            <Card.Body>
-              <Card.Link href="#">Card Link</Card.Link>
-              <Card.Link href="#">Another Link</Card.Link>
-            </Card.Body>
-          </Card>
-        </div>
+        <Card key={e.id} className="bg-dark text-white mb-3" style={{ width: '80em', height: '25rem' }}>
+          <Card.Img
+            src={e.image}
+            alt={e.title}
+            style={{ objectFit: 'cover', height: '100%' }}
+            className="card-img-overlay-hover"
+          />
+          <Card.ImgOverlay className="custom-overlay">
+            <Card.Title>
+              <h1>{e.title}</h1>
+            </Card.Title>
+            {/* <Card.Text>{e.description}</Card.Text>
+            <Card.Text>{e.date}</Card.Text> */}
+          </Card.ImgOverlay>
+        </Card>
       ))}
     </div>
   );
