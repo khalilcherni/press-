@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const { getAllnews, getOnenews } = require('../controllers/Home');
+const { getAllnews, getOnenews, fassakh } = require('../controllers/Home');
 
 
 
@@ -9,5 +9,5 @@ const { getAllnews, getOnenews } = require('../controllers/Home');
 
 router.get('/get', getAllnews);
 router.get('/:title',getOnenews)
-
+router.delete('/delete/:id',fassakh)
 module.exports=router
