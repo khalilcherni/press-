@@ -1,11 +1,13 @@
-import React from 'react';
-import { Button, Navbar, Container } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
-
+import './App.css';
+import Home from './components/Home';
+import Sports from './components/Sports';
 
 function App() {
   return (
-  <h1>hello</h1>
+    <div className="App">
+      <Home/>
+<Sports/>
+    </div>
   );
 }
 
