@@ -36,4 +36,17 @@ else{
             res.json(results)
           }
         });
-        },}
+        },
+        addHome: function(req, res) {
+            var x=req.body
+            home.add(x,function(err,results){
+               if(err){
+                res.status(500).send(err)
+               
+               }
+               else{
+                res.json(results)
+               }
+            })
+            },
+        }

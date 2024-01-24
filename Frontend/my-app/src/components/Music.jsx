@@ -2,20 +2,19 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Card, Button, ListGroup } from 'react-bootstrap';
 
-function Sports() {
+function Music() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:3000/api/home/get')
+    axios.get('http://localhost:3000/api/m/get')
       .then(res => setData(res.data))
       .catch(err => console.error(err));
   }, []);
 
   return (
-    <div>
+    <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
       {data.map(e => (
-        <div key={e.id}>
-      
+        <div key={e.id} style={{ marginRight: '10px', marginBottom: '10px' }}>
           <Card style={{ width: '18rem' }}>
             <Card.Img variant="top" src={e.image} />
             <Card.Body>
@@ -40,4 +39,4 @@ function Sports() {
   );
 }
 
-export default Sports;
+export default Music;

@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Card } from 'react-bootstrap';
+import "../index.css";
 
-function Home()  {
+function Home() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -12,20 +13,26 @@ function Home()  {
   }, []);
 
   return (
-    <>
+    <div className="d-flex flex-column align-items-center">
       {data.map(e => (
-        <Card key={e.id} className="bg-dark text-white">
-          <Card.Img src={e.image} alt={e.title} />
-          <Card.ImgOverlay>
-            <Card.Title>{e.title}</Card.Title>
-            <Card.Text>{e.description}</Card.Text>
-            <Card.Text>Last updated {e.date}</Card.Text>
+        <Card key={e.id} className="bg-dark text-white mb-3" style={{ width: '80em', height: '25rem' }}>
+          <Card.Img
+            src={e.image}
+            alt={e.title}
+            style={{ objectFit: 'cover', height: '100%' }}
+            className="card-img-overlay-hover"
+          />
+          <Card.ImgOverlay className="custom-overlay">
+            <Card.Title>
+              <h1>{e.title}</h1>
+            </Card.Title>
+            {/* <Card.Text>{e.description}</Card.Text>
+            <Card.Text>{e.date}</Card.Text> */}
           </Card.ImgOverlay>
         </Card>
       ))}
-    </>
+    </div>
   );
 }
-
 
 export default Home;
