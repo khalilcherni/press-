@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
 import "../index.css";
+
+
 const ContactForm = () => {
   const [fullname, setFullname] = useState('');
   const [email, setEmail] = useState('');
@@ -17,6 +19,7 @@ const ContactForm = () => {
         setFullname('');
         setEmail('');
         setMessage('');
+        document.getElementById('alert').classList.add('alert');
         console.log(res);
         alert("Your message sent successfully!!");
       })
@@ -24,33 +27,39 @@ const ContactForm = () => {
   };
 
   return (
-    <div>
-      <label htmlFor="Fullname">Full Name:</label>
+    <div className="contact-form-container">
+      <div id="alert" className="alert"> <h1>Contact Us</h1></div>
+
+      <label htmlFor="Fullname" className="form-label">Full Name:</label>
       <input
-        type="text"
+        className="form-input"
+        placeholder="text"
         id="Fullname"
         value={fullname}
         onChange={(e) => setFullname(e.target.value)}
       />
 
-      <label htmlFor="email_id">Email:</label>
+      <label htmlFor="email_id" className="form-label">Email:</label>
       <input
-        type="email"
+        className="form-input"
+        placeholder="email"
         id="email_id"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
       />
 
-      <label htmlFor="message">Message:</label>
+      <label htmlFor="message" className="form-label">Message:</label>
       <textarea
+        className="form-textarea"
         id="message"
         value={message}
         onChange={(e) => setMessage(e.target.value)}
       ></textarea>
 
-      <button onClick={sendMail}>Send Message</button>
+      <button  className='button-55' onClick={sendMail}>Send Message</button>
     </div>
   );
 };
 
 export default ContactForm;
+

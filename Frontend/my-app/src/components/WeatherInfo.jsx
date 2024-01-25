@@ -70,12 +70,12 @@ const WeatherInfo = () => {
         onChange={handleInputChange}
         style={{ marginBottom: '10px' }}
       />
-      <button onClick={getWeather}>Get Weather</button>
+      <button  className='button-55' onClick={getWeather}>Get Weather</button>
       {weatherInfo && (
         <div className='weather-info'>
           <h3>{weatherInfo.location}</h3>
           {Object.values(weatherInfo).slice(1, -1).map((info, index) => (
-            <p key={index}>{info}</p>
+            <p className='c' key={index}>{info}</p>
           ))}
         </div>
       )}

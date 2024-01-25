@@ -34,10 +34,15 @@ function Home() {
                   className="card-img-overlay-hover"
                 />
               <Card.ImgOverlay className="custom-overlay">
+                <hr />
   <Card.Title>
     <h1>{e.title}</h1>
   </Card.Title>
-  <Card.Text>{e.description}</Card.Text>
+  <hr />
+  <hr />
+  <hr />
+  <hr />
+  <Card.Text className='pa'>{e.description}</Card.Text>
   <Card.Text className="date">{e.date}</Card.Text>
 </Card.ImgOverlay>
 
@@ -71,6 +76,7 @@ height: 80vh;
     transform: scale(1.05);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.9);
   }
+  
 
   .card-img-overlay-hover {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -94,7 +100,10 @@ height: 80vh;
   &:hover .custom-overlay {
     opacity: 1; /* Display on hover */
   }
-  
+  .pa{
+    align-text:center;
+    margin-left:20px;
+  }
 `;
 
 export default Home;
