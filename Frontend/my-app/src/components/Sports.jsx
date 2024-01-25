@@ -8,6 +8,7 @@ function Sports() {
   const [newImage, setNewImage] = useState('');
   const [newDescription, setNewDescription] = useState('');
   const [updatingId, setUpdatingId] = useState(null);
+  const [searchTitle, setSearchTitle] = useState('');
 
   useEffect(() => {
     axios.get('http://localhost:3000/api/sports/getAll')
@@ -54,7 +55,18 @@ function Sports() {
     setUpdatingId(null);
   }
 
+  const filteredData = data.filter(item =>
+    item.title.toLowerCase().includes(searchTitle.toLowerCase())
+  );
+
   return (
+    <div>
+      <input
+        type="text"
+        placeholder="Search by title"
+        value={searchTitle}
+        onChange={(e) => setSearchTitle(e.target.value)}
+      />
     <div className="card-container">
       {data.map(e => (
         <div key={e.id} className="card-wrapper">
@@ -110,6 +122,7 @@ function Sports() {
           </Card>
         </div>
       ))}
+    </div>
     </div>
   );
 }

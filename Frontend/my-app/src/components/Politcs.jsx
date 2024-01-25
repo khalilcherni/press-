@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { Card, Button, ListGroup } from 'react-bootstrap';
+import { Card, Button } from 'react-bootstrap';
 import "../index.css";
 
 function Po() {
@@ -9,6 +9,7 @@ function Po() {
   const [newImage, setNewImage] = useState('');
   const [newDescription, setNewDescription] = useState('');
   const [updatingId, setUpdatingId] = useState(null);
+  const [searchTitle, setSearchTitle] = useState('');
 
   useEffect(() => {
     axios.get('http://localhost:3000/api/po/get')
@@ -55,7 +56,18 @@ function Po() {
     setUpdatingId(null);
   }
 
+  const filteredData = data.filter(item =>
+    item.title.toLowerCase().includes(searchTitle.toLowerCase())
+  );
+
   return (
+    <div>
+    <input
+      type="text"
+      placeholder="Search by title"
+      value={searchTitle}
+      onChange={(e) => setSearchTitle(e.target.value)}
+    />
     <div className="card-container">
       {data.map(e => (
         <div key={e.id} className="card-wrapper">
@@ -107,6 +119,7 @@ function Po() {
           </Card>
         </div>
       ))}
+    </div>
     </div>
   );
 }

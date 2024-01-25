@@ -9,6 +9,8 @@ function Music() {
   const [newDescription, setNewDescription] = useState('');
   const [newdate, setNewdate] = useState('');
   const [updatingId, setUpdatingId] = useState(null);
+  const [searchTitle, setSearchTitle] = useState('');
+
   useEffect(() => {
     axios.get('http://localhost:3000/api/m/get')
       .then(res => setData(res.data))
@@ -24,7 +26,6 @@ function Music() {
       .catch(err => console.log(err));
   }
 
-
   const handleUpdateClick = (id) => {
     setUpdatingId(id);
     const selectedItem = data.find(item => item.id === id);
@@ -39,12 +40,12 @@ function Music() {
       title: newTitle,
       image: newImage,
       description: newDescription,
-      date:newdate
+      date: newdate
     })
       .then(() => {
         const updatedData = data.map(item => (
           item.id === id
-            ? { ...item, title: newTitle, image: newImage, description: newDescription ,date:newdate}
+            ? { ...item, title: newTitle, image: newImage, description: newDescription, date: newdate }
             : item
         ));
         setData(updatedData);
@@ -56,7 +57,19 @@ function Music() {
   const handleCancelUpdate = () => {
     setUpdatingId(null);
   }
+
+  const filteredData = data.filter(item =>
+    item.title.toLowerCase().includes(searchTitle.toLowerCase())
+  );
+
   return (
+    <div>
+      <input
+        type="text"
+        placeholder="Search by title"
+        value={searchTitle}
+        onChange={(e) => setSearchTitle(e.target.value)}
+      />
     <div className="card-container">
       {data.map(e => (
         <div key={e.id} className="card-wrapper">
@@ -111,6 +124,7 @@ function Music() {
           </Card>
         </div>
       ))}
+    </div>
     </div>
   );
 }
