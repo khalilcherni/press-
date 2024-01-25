@@ -5,18 +5,14 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import TV from './Tv.jsx';
 import Radio from './Radio.jsx';
-import About from './About';
+import About from './About.jsx';
 import WeatherInfo from './WeatherInfo';
-
-
-import Sports from './Sports'; // Import the Sports component
+import ContactForm from './Email.jsx';
+import Add from './Add.jsx';
+import Sports from './Sports'; 
 import Music from './Music';
 import Home from './Home';
-import ContactForm from './Email';
-import Add from './Add';
-import Po from './Politcs';
-
-// ... (previous imports)
+import Politics from './Politcs'; // Change the import to Politics
 
 function BasicExample() {
   const [activeTab, setActiveTab] = useState('home');
@@ -35,6 +31,8 @@ function BasicExample() {
             <Nav className="me-auto">
               <Nav.Link href="#home" onClick={() => handleTabClick('home')}>
                 Home
+              </Nav.Link> <Nav.Link href="#weather" onClick={() => handleTabClick('Weather')}>
+                Weather
               </Nav.Link>
               <Nav.Link href="#sports" onClick={() => handleTabClick('sports')}>
                 Sports
@@ -80,12 +78,12 @@ function BasicExample() {
       {activeTab === 'sports' && <Sports />}
       {activeTab === 'tv' && <TV />}
       {activeTab === 'radio' && <Radio />}
-      {activeTab === 'about' && <About />}
+      {activeTab === 'About' && <About />}
       {activeTab === 'Weather' && <WeatherInfo />}
       {activeTab === 'music' && <Music />}
       {activeTab === 'contact' && <ContactForm />}
-      {activeTab==='Add' && <Add/>}
-      {activeTab==='politics' && <Po/>}
+      {activeTab === 'Add' && <Add />}
+      {activeTab === 'politics' && <Politics />}
     </div>
   );
 }

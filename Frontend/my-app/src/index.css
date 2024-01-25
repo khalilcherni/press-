@@ -5,7 +5,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
 }
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -28,9 +30,7 @@ code {
   transition: background-color 0.3s ease;
 }
 
-.custom-overlay:hover {
-  background-color: rgba(0, 0, 0, 0.7); /* Adjust the background color on hover */
-}
+
 
 .custom-card {
   height: 100%;
