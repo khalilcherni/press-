@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Card, Button, ListGroup } from 'react-bootstrap';
+import "../index.css";
 
-function Sports() {
+function Po() {
   const [data, setData] = useState([]);
   const [newTitle, setNewTitle] = useState('');
   const [newImage, setNewImage] = useState('');
@@ -10,13 +11,13 @@ function Sports() {
   const [updatingId, setUpdatingId] = useState(null);
 
   useEffect(() => {
-    axios.get('http://localhost:3000/api/sports/getAll')
+    axios.get('http://localhost:3000/api/po/get')
       .then(res => setData(res.data))
       .catch(err => console.error(err));
   }, []);
 
   const handleDelete = (id) => {
-    axios.delete(`http://localhost:3000/api/sports/delete/${id}`)
+    axios.delete(`http://localhost:3000/api/po/delete/${id}`)
       .then(() => {
         const updatedData = data.filter(e => e.id !== id);
         setData(updatedData);
@@ -33,7 +34,7 @@ function Sports() {
   }
 
   const updateItem = (id) => {
-    axios.put(`http://localhost:3000/api/sports/put/${id}`, {
+    axios.put(`http://localhost:3000/api/po/put/${id}`, {
       title: newTitle,
       image: newImage,
       description: newDescription
@@ -90,11 +91,6 @@ function Sports() {
                 <Card.Text>{e.description}</Card.Text>
               )}
             </Card.Body>
-            <ListGroup className="list-group-flush">
-              <ListGroup.Item>Cras justo odio</ListGroup.Item>
-              <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
-              <ListGroup.Item>{e.date}</ListGroup.Item>
-            </ListGroup>
             <Card.Body>
               {updatingId === e.id ? (
                 <div>
@@ -115,4 +111,4 @@ function Sports() {
   );
 }
 
-export default Sports;
+export default Po;
