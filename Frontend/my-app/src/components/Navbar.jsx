@@ -45,18 +45,6 @@ function BasicExample() {
               <Nav.Link href="#link" onClick={() => handleTabClick('tech')}>
                 Tech
               </Nav.Link>
-              <Nav.Link href="#weather" onClick={() => handleTabClick('Weather')}>
-                Weather
-              </Nav.Link>
-              <Nav.Link href="#radio" onClick={() => handleTabClick('radio')}>
-                Radio
-              </Nav.Link>
-              <Nav.Link href="#tv" onClick={() => handleTabClick('tv')}>
-                TV
-              </Nav.Link>
-              <Nav.Link href="#" onClick={() => handleTabClick('about')}>
-                About Us
-              </Nav.Link>
               <Nav.Link href="#music" onClick={() => handleTabClick('music')}>
                 Music
               </Nav.Link>
@@ -67,10 +55,20 @@ function BasicExample() {
                 Contact Us
               </Nav.Link>
               <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                <About href="#about">Dropdown Item 1</About>
-                <NavDropdown.Item href="#dropdown-item-2">Dropdown Item 2</NavDropdown.Item>
-                {/* Add more dropdown items if needed */}
-              </NavDropdown>
+              <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+              <NavDropdown.Item href="#weather" onClick={() => handleTabClick('Weather')}>
+                Weather
+              </NavDropdown.Item>
+              <NavDropdown.Item href="#radio" onClick={() => handleTabClick('radio')}>
+                Radio
+              </NavDropdown.Item>
+              <NavDropdown.Item href="#tv" onClick={() => handleTabClick('tv')}>
+                TV
+              </NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#about" onClick={() => handleTabClick('about')}>
+                About Us
+              </NavDropdown.Item>
             </Nav>
           </Navbar.Collapse>
         </Container>
