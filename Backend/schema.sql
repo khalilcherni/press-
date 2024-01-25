@@ -81,16 +81,16 @@ COLLATE = utf8mb4_0900_ai_ci;
 
 
 -- -----------------------------------------------------
--- Table `press`.`tech`
+-- Table `press`.`tec`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `press`.`tech` (
-  `id` INT UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `press`.`tec` (
+  `id` INT NOT NULL AUTO_INCREMENT,
   `title` VARCHAR(100) NOT NULL,
   `image` VARCHAR(10000) NOT NULL,
   `description` VARCHAR(1000) NOT NULL,
-  `date` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB
+AUTO_INCREMENT = 3
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
 

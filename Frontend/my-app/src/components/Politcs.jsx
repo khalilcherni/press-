@@ -1,22 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Card, Button, ListGroup } from 'react-bootstrap';
+import "../index.css";
 
-function Music() {
+function Po() {
   const [data, setData] = useState([]);
   const [newTitle, setNewTitle] = useState('');
   const [newImage, setNewImage] = useState('');
   const [newDescription, setNewDescription] = useState('');
-  const [newdate, setNewdate] = useState('');
   const [updatingId, setUpdatingId] = useState(null);
+
   useEffect(() => {
-    axios.get('http://localhost:3000/api/m/get')
+    axios.get('http://localhost:3000/api/po/get')
       .then(res => setData(res.data))
       .catch(err => console.error(err));
   }, []);
 
   const handleDelete = (id) => {
-    axios.delete(`http://localhost:3000/api/m/delete/${id}`)
+    axios.delete(`http://localhost:3000/api/po/delete/${id}`)
       .then(() => {
         const updatedData = data.filter(e => e.id !== id);
         setData(updatedData);
@@ -24,27 +25,24 @@ function Music() {
       .catch(err => console.log(err));
   }
 
-
   const handleUpdateClick = (id) => {
     setUpdatingId(id);
     const selectedItem = data.find(item => item.id === id);
     setNewTitle(selectedItem.title);
     setNewImage(selectedItem.image);
     setNewDescription(selectedItem.description);
-    setNewdate(selectedItem.date);
   }
 
   const updateItem = (id) => {
-    axios.put(`http://localhost:3000/api/m/put/${id}`, {
+    axios.put(`http://localhost:3000/api/po/put/${id}`, {
       title: newTitle,
       image: newImage,
-      description: newDescription,
-      date:newdate
+      description: newDescription
     })
       .then(() => {
         const updatedData = data.map(item => (
           item.id === id
-            ? { ...item, title: newTitle, image: newImage, description: newDescription ,date:newdate}
+            ? { ...item, title: newTitle, image: newImage, description: newDescription }
             : item
         ));
         setData(updatedData);
@@ -56,6 +54,7 @@ function Music() {
   const handleCancelUpdate = () => {
     setUpdatingId(null);
   }
+
   return (
     <div className="card-container">
       {data.map(e => (
@@ -117,4 +116,4 @@ function Music() {
   );
 }
 
-export default Music;
+export default Po;

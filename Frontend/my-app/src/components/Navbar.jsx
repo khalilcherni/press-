@@ -6,6 +6,9 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import Sports from './Sports'; // Import the Sports component
 import Music from './Music';
 import Home from './Home';
+import ContactForm from './Email';
+import Add from './Add';
+import Po from './Politcs';
 
 function BasicExample() {
   const [activeTab, setActiveTab] = useState('home');
@@ -35,6 +38,12 @@ function BasicExample() {
               <Nav.Link href="#link" onClick={() => handleTabClick('music')}>
                 Music
               </Nav.Link>
+              <Nav.Link href="#link" onClick={() => handleTabClick('Add')}>
+            Add News
+              </Nav.Link>
+              <Nav.Link href="#link" onClick={() => handleTabClick('contact')}>
+                Contact Us
+              </Nav.Link>
               <NavDropdown title="Dropdown" id="basic-nav-dropdown">
                 {/* Dropdown items here */}
               </NavDropdown>
@@ -42,11 +51,14 @@ function BasicExample() {
           </Navbar.Collapse>
         </Container>
       </Navbar>
+      <hr />
 
    {activeTab==='home' && <Home/>}
       {activeTab === 'sports' && <Sports />}
       {activeTab === 'music' && <Music />}
-      {/* Add other conditions for other tabs if needed */}
+      {activeTab === 'contact' && <ContactForm />}
+      {activeTab==='Add' && <Add/>}
+      {activeTab==='politics' && <Po/>}
     </div>
   );
 }
