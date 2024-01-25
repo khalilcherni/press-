@@ -75,7 +75,7 @@ function Add() {
           />
         </div>
 
-        <button type="button" className="btn btn-success" onClick={handle}>
+        <button className='button-55' type="button"  onClick={handle}>
           ADD
         </button>
       </form>

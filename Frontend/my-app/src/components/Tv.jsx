@@ -44,7 +44,7 @@ const TV = () => {
 
   return (
     <div className="tv-container">
-    <h1 id='f'> Free Palistin tv</h1>
+    
 
       <YouTube videoId="bNyUyrR0PHo" opts={opts} onReady={onReady} />
       <div className="controls">
