@@ -11,3 +11,24 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* Add these styles for the hover effect */
+/* Add these styles for the hover effect */
+.card-img-overlay-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-img-overlay-hover:hover {
+  transform: translateY(-10px); /* Adjust the translation value as needed */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow on hover */
+}
+
+/* Additional styles for the overlay */
+.custom-overlay {
+  transition: background-color 0.3s ease;
+}
+
+.custom-overlay:hover {
+  background-color: rgba(0, 0, 0, 0.7); /* Adjust the background color on hover */
+}
+

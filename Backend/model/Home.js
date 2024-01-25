@@ -22,5 +22,11 @@ module.exports={
           connection.query(sql,[id],function(err,results){
               callback(err,results)
           })
-    }
+    },
+    add: function (x,callback) {
+      const sql='INSERT INTO `home` SET ?'
+      connection.query(sql,x,function(error,results){
+        callback(error,results)
+      })
+    },
   }
