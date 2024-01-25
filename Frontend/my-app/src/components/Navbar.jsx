@@ -12,6 +12,9 @@ import WeatherInfo from './WeatherInfo';
 import Sports from './Sports'; // Import the Sports component
 import Music from './Music';
 import Home from './Home';
+import ContactForm from './Email';
+import Add from './Add';
+import Po from './Politcs';
 
 // ... (previous imports)
 
@@ -57,6 +60,12 @@ function BasicExample() {
               <Nav.Link href="#music" onClick={() => handleTabClick('music')}>
                 Music
               </Nav.Link>
+              <Nav.Link href="#link" onClick={() => handleTabClick('Add')}>
+            Add News
+              </Nav.Link>
+              <Nav.Link href="#link" onClick={() => handleTabClick('contact')}>
+                Contact Us
+              </Nav.Link>
               <NavDropdown title="Dropdown" id="basic-nav-dropdown">
                 <About href="#about">Dropdown Item 1</About>
                 <NavDropdown.Item href="#dropdown-item-2">Dropdown Item 2</NavDropdown.Item>
@@ -66,6 +75,7 @@ function BasicExample() {
           </Navbar.Collapse>
         </Container>
       </Navbar>
+      <hr />
 
       {/* Render components based on the activeTab state */}
       {activeTab === 'home' && <Home />}
@@ -75,7 +85,9 @@ function BasicExample() {
       {activeTab === 'about' && <About />}
       {activeTab === 'Weather' && <WeatherInfo />}
       {activeTab === 'music' && <Music />}
-      {/* Add other conditions for other tabs if needed */}
+      {activeTab === 'contact' && <ContactForm />}
+      {activeTab==='Add' && <Add/>}
+      {activeTab==='politics' && <Po/>}
     </div>
   );
 }
