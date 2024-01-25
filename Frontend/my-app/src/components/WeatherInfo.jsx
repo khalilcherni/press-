@@ -1,8 +1,6 @@
 // Import CSS
 import './WeatherInfo.css';
-import { useState } from 'react';
-
-// Import images
+import React, { useState } from 'react';
 import sunnyImage from './images/clear.png';
 import rainyImage from './images/rain.png';
 import cloudyImage from './images/cloud.png';
@@ -55,12 +53,11 @@ const WeatherInfo = () => {
     <div
       className='weather-container'
       style={{
-        backgroundImage: `url(${weatherInfo ? weatherInfo.conditionImage : ''})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
+        // Remove the backgroundImage style
         color: 'white',
-        padding: '20px', // Adjust padding as needed
-        borderRadius: '10px', // Optional: Add border-radius for a rounded appearance
+        padding: '20px',
+        borderRadius: '10px',
+        position: 'relative',
       }}
     >
       <input
@@ -70,15 +67,22 @@ const WeatherInfo = () => {
         onChange={handleInputChange}
         style={{ marginBottom: '10px' }}
       />
-      <button  className='button-55' onClick={getWeather}>Get Weather</button>
+      <button className='button-55' onClick={getWeather}>
+        Get Weather
+      </button>
       {weatherInfo && (
         <div className='weather-info'>
           <h3>{weatherInfo.location}</h3>
           {Object.values(weatherInfo).slice(1, -1).map((info, index) => (
-            <p className='c' key={index}>{info}</p>
+            <p className='c' key={index}>
+              {info}
+            </p>
           ))}
         </div>
       )}
+      <div className='img-container'>
+        {weatherInfo && <img src={weatherInfo.conditionImage} alt='Weather Condition' />}
+      </div>
     </div>
   );
 };
