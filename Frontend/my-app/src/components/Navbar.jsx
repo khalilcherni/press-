@@ -9,10 +9,15 @@ import About from './About.jsx';
 import WeatherInfo from './WeatherInfo';
 import ContactForm from './Email.jsx';
 import Add from './Add.jsx';
-import Sports from './Sports'; 
+import Sports from './Sports';
 import Music from './Music';
-import Home from './Home';
-import Politics from './Politcs'; // Change the import to Politics
+import Home from './Home.jsx';
+import Politics from './Politcs.jsx';
+
+import logo from './images/free-palestine.logo';
+
+
+
 
 function BasicExample() {
   const [activeTab, setActiveTab] = useState('home');
@@ -25,13 +30,22 @@ function BasicExample() {
     <div>
       <Navbar expand="lg" className="bg-body-tertiary">
         <Container>
-          <Navbar.Brand href="#home">Tunisian Press</Navbar.Brand>
+          <Navbar.Brand href="#">
+          <img
+          src={logo}
+          height="60"
+          
+          
+        />
+    
+          Tunisian Press</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
               <Nav.Link href="#home" onClick={() => handleTabClick('home')}>
                 Home
-              </Nav.Link> <Nav.Link href="#weather" onClick={() => handleTabClick('Weather')}>
+              </Nav.Link>
+              <Nav.Link href="#weather" onClick={() => handleTabClick('Weather')}>
                 Weather
               </Nav.Link>
               <Nav.Link href="#sports" onClick={() => handleTabClick('sports')}>
@@ -47,26 +61,26 @@ function BasicExample() {
                 Music
               </Nav.Link>
               <Nav.Link href="#link" onClick={() => handleTabClick('Add')}>
-            Add News
+                Add News
               </Nav.Link>
               <Nav.Link href="#link" onClick={() => handleTabClick('contact')}>
                 Contact Us
               </Nav.Link>
               <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-              <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#weather" onClick={() => handleTabClick('Weather')}>
-                Weather
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#radio" onClick={() => handleTabClick('radio')}>
-                Radio
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#tv" onClick={() => handleTabClick('tv')}>
-                TV
-              </NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#about" onClick={() => handleTabClick('about')}>
-                About Us
-              </NavDropdown.Item>
+                <NavDropdown.Item href="#weather" onClick={() => handleTabClick('Weather')}>
+                  Weather
+                </NavDropdown.Item>
+                <NavDropdown.Item href="#radio" onClick={() => handleTabClick('radio')}>
+                  Radio
+                </NavDropdown.Item>
+                <NavDropdown.Item href="#tv" onClick={() => handleTabClick('tv')}>
+                  TV
+                </NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item href="#About" onClick={() => handleTabClick('About')}>
+                  About Us
+                </NavDropdown.Item>
+              </NavDropdown>
             </Nav>
           </Navbar.Collapse>
         </Container>
