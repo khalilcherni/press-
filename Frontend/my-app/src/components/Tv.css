@@ -6,15 +6,17 @@ body {
 
 .tv-container {
     position: relative;
+    text-align: center;
     overflow: hidden;
     width: 80vw;
-    max-width: 800px;
+    max-width: 660px;
+    margin-left: 500px;
     height: 45vw; /* Maintain a 16:9 aspect ratio for the TV screen */
-    max-height: 450px;
-    border: 10px solid #000;
+    max-height: 410px;
+    border: 10px solid #241901;
     border-radius: 20px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTw3vKDNJAFdTWT7zaPKJ9agMdYy_pZd_T0Nw&usqp=CAU'); /* Replace with the path to your background image */
+
   }
   
   .video-player {

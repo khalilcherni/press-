@@ -5,7 +5,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import TV from './Tv.jsx';
 import Radio from './Radio.jsx';
-import About from './About.jsx';
+import Aboutus from './Aboutus.jsx';
 import WeatherInfo from './WeatherInfo';
 import ContactForm from './Email.jsx';
 import Add from './Add.jsx';
@@ -14,7 +14,7 @@ import Music from './Music';
 import Home from './Home.jsx';
 import Politics from './Politcs.jsx';
 
-import logo from './images/free-palestine.logo';
+import logo from './images/palestine-flag.gif';
 
 
 
@@ -34,8 +34,6 @@ function BasicExample() {
           <img
           src={logo}
           height="60"
-          
-          
         />
     
           Tunisian Press</Navbar.Brand>
@@ -54,9 +52,9 @@ function BasicExample() {
               <Nav.Link href="#link" onClick={() => handleTabClick('politics')}>
                 Politics
               </Nav.Link>
-              <Nav.Link href="#link" onClick={() => handleTabClick('tech')}>
+              {/* <Nav.Link href="#link" onClick={() => handleTabClick('tech')}>
                 Tech
-              </Nav.Link>
+              </Nav.Link> */}
               <Nav.Link href="#music" onClick={() => handleTabClick('music')}>
                 Music
               </Nav.Link>
@@ -66,7 +64,7 @@ function BasicExample() {
               <Nav.Link href="#link" onClick={() => handleTabClick('contact')}>
                 Contact Us
               </Nav.Link>
-              <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+              <NavDropdown title="details" id="basic-nav-dropdown" >
                 <NavDropdown.Item href="#weather" onClick={() => handleTabClick('Weather')}>
                   Weather
                 </NavDropdown.Item>
@@ -87,12 +85,13 @@ function BasicExample() {
       </Navbar>
       <hr />
 
-      {/* Render components based on the activeTab state */}
+     
       {activeTab === 'home' && <Home />}
       {activeTab === 'sports' && <Sports />}
       {activeTab === 'tv' && <TV />}
       {activeTab === 'radio' && <Radio />}
-      {activeTab === 'About' && <About />}
+      {activeTab === 'Aboutus' && <Aboutus />}
+
       {activeTab === 'Weather' && <WeatherInfo />}
       {activeTab === 'music' && <Music />}
       {activeTab === 'contact' && <ContactForm />}

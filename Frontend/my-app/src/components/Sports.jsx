@@ -91,20 +91,19 @@ function Sports() {
               )}
             </Card.Body>
             <ListGroup className="list-group-flush">
-              <ListGroup.Item>Cras justo odio</ListGroup.Item>
-              <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
+        
               <ListGroup.Item>{e.date}</ListGroup.Item>
             </ListGroup>
             <Card.Body>
               {updatingId === e.id ? (
                 <div>
-                  <Button variant="success" onClick={() => updateItem(e.id)}>Update</Button>
-                  <Button variant="danger" onClick={handleCancelUpdate}>Cancel</Button>
+                  <Button variant="success"  className='button-55' onClick={() => updateItem(e.id)}>Update</Button>
+                  <Button variant="danger"  className='button-55' onClick={handleCancelUpdate}>Cancel</Button>
                 </div>
               ) : (
                 <div>
-                  <Button variant="primary" onClick={() => handleDelete(e.id)}>Delete</Button>
-                  <Button variant="secondary" onClick={() => handleUpdateClick(e.id)}>Update</Button>
+                  <Button variant="primary"  className='button-55' onClick={() => handleDelete(e.id)}>Delete</Button>
+                  <Button variant="secondary"  className='button-55' onClick={() => handleUpdateClick(e.id)}>Update</Button>
                 </div>
               )}
             </Card.Body>

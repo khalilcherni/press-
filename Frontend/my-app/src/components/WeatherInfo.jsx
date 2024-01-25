@@ -3,10 +3,10 @@ import './WeatherInfo.css';
 import { useState } from 'react';
 
 // Import images
-import sunnyImage from './images/sunny.avif';
-import rainyImage from './images/rainy.avif';
-import cloudyImage from './images/cloudy.avif';
-import unknownImage from './images/unknownImage.avif';
+import sunnyImage from './images/clear.png';
+import rainyImage from './images/rain.png';
+import cloudyImage from './images/cloud.png';
+import unknownImage from './images/snow.png';
 
 const weatherImages = {
   clear: sunnyImage,
@@ -70,12 +70,12 @@ const WeatherInfo = () => {
         onChange={handleInputChange}
         style={{ marginBottom: '10px' }}
       />
-      <button onClick={getWeather}>Get Weather</button>
+      <button  className='button-55' onClick={getWeather}>Get Weather</button>
       {weatherInfo && (
         <div className='weather-info'>
           <h3>{weatherInfo.location}</h3>
           {Object.values(weatherInfo).slice(1, -1).map((info, index) => (
-            <p key={index}>{info}</p>
+            <p className='c' key={index}>{info}</p>
           ))}
         </div>
       )}
