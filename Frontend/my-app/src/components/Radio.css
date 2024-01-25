@@ -1,0 +1,31 @@
+/* Radio.css */
+.radio-container {
+  text-align: center;
+  padding: 20px;
+  border-radius: 8px;
+  width: 600px;
+  height: 300px;
+  margin: 20px auto;
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvOCA3WoVHDjxAFce8qj0vF-uxXehF6U7dwa9YTVKPuylsbcbCUWy4iBb8OADV3FCAOIU&usqp=CAU'); /* Replace with the path to your background image */
+  background-size: cover; /* Ensure the background image covers the container */
+  background-position: center; /* Center the background image */
+  color: #fff; /* Set text color to white for better visibility on the background */
+}
+
+audio {
+  width: 100%;
+  margin-top: 10px;
+  background-color: rgba(255, 255, 255, 0.8); /* White background with some transparency */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Customize the appearance of the audio controls */
+audio::-webkit-media-controls-panel {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 5px;
+}
+
+/* Add other styles for audio controls as needed */
