@@ -55,10 +55,10 @@ function Sports() {
   }
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
+    <div className="card-container">
       {data.map(e => (
-        <div key={e.id} style={{ marginRight: '10px', marginBottom: '10px' }}>
-          <Card style={{ width: '18rem' }}>
+        <div key={e.id} className="card-wrapper">
+          <Card style={{ width: '18rem' }} className="custom-card">
             <Card.Img variant="top" src={e.image} />
             <Card.Body>
               <Card.Title>{e.title}</Card.Title>

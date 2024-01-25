@@ -91,11 +91,6 @@ function Po() {
                 <Card.Text>{e.description}</Card.Text>
               )}
             </Card.Body>
-            <ListGroup className="list-group-flush">
-              <ListGroup.Item>Cras justo odio</ListGroup.Item>
-              <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
-              <ListGroup.Item>{e.date}</ListGroup.Item>
-            </ListGroup>
             <Card.Body>
               {updatingId === e.id ? (
                 <div>
