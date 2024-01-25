@@ -51,14 +51,14 @@ function BasicExample() {
               <Nav.Link href="#tv" onClick={() => handleTabClick('tv')}>
                 TV
               </Nav.Link>
-              <Nav.Link href="#about" onClick={() => handleTabClick('about')}>
+              <Nav.Link href="#" onClick={() => handleTabClick('about')}>
                 About Us
               </Nav.Link>
               <Nav.Link href="#music" onClick={() => handleTabClick('music')}>
                 Music
               </Nav.Link>
               <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                <NavDropdown.Item href="#dropdown-item-1">Dropdown Item 1</NavDropdown.Item>
+                <About href="#about">Dropdown Item 1</About>
                 <NavDropdown.Item href="#dropdown-item-2">Dropdown Item 2</NavDropdown.Item>
                 {/* Add more dropdown items if needed */}
               </NavDropdown>
