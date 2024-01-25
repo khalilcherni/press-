@@ -3,8 +3,8 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import TV from './Tv';
-import Radio from './Radio';
+import TV from './Tv.jsx';
+import Radio from './Radio.jsx';
 import About from './About';
 import WeatherInfo from './WeatherInfo';
 
